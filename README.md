@@ -1,6 +1,9 @@
 # SWELL-KW-
 Multimodal SWELL knowledge work (SWELL-KW) dataset for research on stress and user modeling. 
 
+# DATASET
+The dataset used in this repository could be found here https://www.kaggle.com/qiriro/swell-heart-rate-variability-hrv
+
 # BACKGROUND
 This dataset comprises of heart rate variability (HRV) indices computed from the multimodal SWELL knowledge work (SWELL-KW) dataset for research on stress and user modeling (see. http://cs.ru.nl/~skoldijk/SWELL-KW/Dataset.html). The SWELL was collected by researchers at the Institute for Computing and Information Sciences at Radboud University. It is a result of experiments conducted on 25 subjects doing typical office work (for example writing reports, making presentations, reading e-mail and searching for information). The subject went through typical working stressors such as receiving unexpected emails interruptions and pressure to complete their work on time. The experiment recorded various data including computer logging, facial expression, body postures, ECG signal, and skin conductance. The researchers also recorded the
 subjects’ subjective experience on task load, mental effort, emotion, and perceived stress. Each participant went through three different working conditions:
@@ -18,7 +21,7 @@ actions—while others were just irrelevant to
 their tasks.
 
 # HRV COMPUTATION
-HRV indices were computed as follows: First, we extracted an inter-beat interval
+HRV indices were computed as follows: First, the researchers extracted an inter-beat interval
 (IBI) signal from the peaks of the Electrocardiography (ECG) of each subject. Then, each HRV
 index is computed on a 5 minutes IBI array. A new IBI sample is appended to the IBI array while the
 oldest IBI sample is removed from its beginning. The new resulting IBI array is used to compute
@@ -29,3 +32,6 @@ granular, detailed and accurate study of how each heartbeat influences the perso
 
 # RESEARCH CONTRIBUTION
 The original dataset contains raw ECG signal and a feature dataset which is annotated with the conditions under which the data was collected. It also contained heart rate variability (HRV) feature (only RMSSD) that was computed every one minute. For more details, refer to the published paper included in this repository.
+
+# NOTEBOOK
+The notebook analyzes the finalized dataset having 36 features. The notebook employs a "Random Forest Classifier" which predicts the stressor label (No stress,Time Pressure,Interruption) using the remaining extracted features. The classification report is then returned.
